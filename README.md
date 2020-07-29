@@ -30,7 +30,7 @@ ArangoDB 3.5+ is used to store bot data.
 
 ### api_id
 
-Get it from http://my.telegram.org/
+Get it from <http://my.telegram.org/apps>
 
 | Required | Type | Default   |
 | -------- | ---- | --------- |
@@ -38,13 +38,15 @@ Get it from http://my.telegram.org/
 
 ### api_hash
 
-Get it from http://my.telegram.org/
+Get it from <http://my.telegram.org/apps>
 
 | Required | Type | Default   |
 | -------- | ---- | --------- |
 | Yes      | str  | `-`       |
 
 ### db_username
+
+Change this if you don't use the default one.
 
 | Required | Type | Default |
 | -------- | ---- | ------- |
@@ -58,15 +60,19 @@ Get it from http://my.telegram.org/
 
 ### db_password
 
+The DB user password needed to store userbot data.
+
 | Required | Type | Default   |
 | -------- | ---- | --------- |
 | Yes      | str  | `-`       |
 
 ### db_host
 
+The ArangoDB host for your instance, fallbacks to the localhost at port `8529`.
+
 | Required | Type | Default                |
 | -------- | ---- | ---------------------- |
-| No       | str  | http://127.0.0.1:8529  |
+| No       | str  | <http://127.0.0.1:8529>  |
 
 ### log_bot_token
 
@@ -111,11 +117,18 @@ The prefix that is used in the help commands examples. This does not need to be 
 
 ### spamwatch_host
 
+Change if you self-host your own SpamWatch API server.
+
 | Required | Type | Default                  |
 | -------- | ---- | ------------------------ |
 | No       | str  | `https://api.spamwat.ch` |
 
 ### spamwatch_token
+
+Not needed if you don't use the API. To enable SpamWatch API integration,
+an API key is needed. If you use the default one, contact [Simon Schürrle][sitichu-tg] privately in Telegram to get one. Requires Admin or Root to submit bans to the API.
+
+[sitichu-tg]: https://t.me/SitiSchu
 
 | Required | Type | Default   |
 | -------- | ---- | --------- |
@@ -131,8 +144,8 @@ Useful for local development. Disabled actually banning a user in groups and rep
 
 ### source_url
 
-Used in .kantek and .update
+Used in both `.kantek` and `.update` commands.
 
 | Required | Type | Default       |
 | -------- | ---- | ------------- |
-| No       | str  | `src.kv2.dev` |
+| No       | str  | `https://github.com/MadeByThePinsHub/kantek` |
