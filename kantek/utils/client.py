@@ -96,9 +96,9 @@ class Client(TelegramClient):  # pylint: disable = R0901, W0223
         for ban_reason in AUTOMATED_BAN_REASONS:
             if user and (ban_reason in str(user[0]['reason']).lower()):
                 if ban_reason == 'kriminalamt':
-                    return False, 'Already banned by kriminalamt'
+                    return False, 'Already banned by [SpamWatch/Kantek] kriminalamt'
                 else:
-                    return False, 'Already banned by autobahn'
+                    return False, 'Already banned by [SpamWatch/Kantek] autobahn'
 
         if user:
             count = SPAMADD_PATTERN.search(reason)
@@ -110,9 +110,6 @@ class Client(TelegramClient):  # pylint: disable = R0901, W0223
         await self.send_message(
             self.config.gban_group,
             f'<a href="tg://user?id={uid}">{uid}</a>', parse_mode='html')
-        await self.send_message(
-            self.config.gban_group,
-            f'/gban {uid} {reason}')
         await self.send_message(
             self.config.gban_group,
             f'/fban {uid} {reason}')
@@ -150,9 +147,6 @@ class Client(TelegramClient):  # pylint: disable = R0901, W0223
         await self.send_message(
             self.config.gban_group,
             f'<a href="tg://user?id={uid}">{uid}</a>', parse_mode='html')
-        await self.send_message(
-            self.config.gban_group,
-            f'/ungban {uid}')
         await self.send_message(
             self.config.gban_group,
             f'/unfban {uid}')

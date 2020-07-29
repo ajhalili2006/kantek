@@ -34,7 +34,7 @@ class Config:  # pylint: disable = R0902
 
     debug_mode: bool = False
 
-    source_url: str = 'src.kv2.dev'
+    source_url: str = 'https://github.com/AndreiJirohHaliliDev2006/kantek'
 
     plugin_path: Path
 
@@ -68,13 +68,13 @@ class Config:  # pylint: disable = R0902
         # error keyword is temporary until the old config is removed fully
         self.api_id = config.get('api_id')
         if error:
-            assert self.api_id is not None, "api_id is not set"
+            assert self.api_id is not None, "You can't use me without your App ID!"
         self.api_hash = config.get('api_hash')
         if error:
-            assert self.api_hash is not None, "api_hash is not set"
+            assert self.api_hash is not None, "Wutdafuq. Did you forget your App Hash?"
         self.phone = config.get('phone')
         if error:
-            assert self.phone is not None, "phone is not set"
+            assert self.phone is not None, "I'm useless without your phone number, REEEEEEEEEEEEEEEEE."
 
         self.log_bot_token = config.get('log_bot_token')
         if error:
@@ -84,7 +84,7 @@ class Config:  # pylint: disable = R0902
             assert self.log_channel_id is not None, "log_channel_id is not set"
         self.gban_group = config.get('gban_group')
         if error:
-            assert self.gban_group is not None, "gban_group is not set"
+            assert self.gban_group is not None, "Can't fban pajeets automatically without an dedicated chat."
         self.db_username = config.get('db_username', self.db_username)
         self.db_name = config.get('db_name', self.db_name)
         self.db_password = config.get('db_password')
