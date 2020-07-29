@@ -107,8 +107,16 @@ venv.bak/
 
 .idea
 
-sessions
-kantek/config.py
-kantek/tmp
+# Session files
+kantek/sessions/*.session
+!kantek/sessions/README.md
+
+# Configuration files
+# kantek/config.py
 config.json
+
+# Temporary files
+kantek/tmp
+
+# Misc
 _dev_test.py
