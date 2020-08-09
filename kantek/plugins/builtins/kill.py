@@ -14,5 +14,5 @@ async def kill(client: Client) -> None:
     Examples:
         {cmd}
     """
-    tlog.info('.kill executed. Disconnecting.')
+    tlog.info('Kill switch triggered, disconnecting...')
     await client.disconnect()
